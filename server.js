@@ -5,7 +5,9 @@ const server = http.createServer(app);
 const path = require('path');
 const { Server } = require("socket.io")
 const io = new Server(server)
-const port = 3000
+const env = require('dotenv')
+env.config()
+const port = process.env.PORT
 
 let game = Array(9)
 for(let i = 0; i<9; i++){
